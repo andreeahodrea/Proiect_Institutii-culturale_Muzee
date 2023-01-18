@@ -1,0 +1,68 @@
+﻿@page
+@model WebApplication27.Pages.Institutii.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Institutie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Institutie.ID" />
+            <div class="form-group">
+                <label asp-for="Institutie.Nume" class="control-label"></label>
+                <input asp-for="Institutie.Nume" class="form-control" />
+                <span asp-validation-for="Institutie.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Institutie.Program" class="control-label"></label>
+                <input asp-for="Institutie.Program" class="form-control" />
+                <span asp-validation-for="Institutie.Program" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Institutie.Bilet" class="control-label"></label>
+                <input asp-for="Institutie.Bilet" class="form-control" />
+                <span asp-validation-for="Institutie.Bilet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Institutie.PublishingDate" class="control-label"></label>
+                <input asp-for="Institutie.PublishingDate" class="form-control" />
+                <span asp-validation-for="Institutie.PublishingDate" class="textdanger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Institutie.ColectieID" class="control-label">NumeleColectiilor</label>
+                <select asp-for="Institutie.ColectieID" class="form-control" asp-items="ViewBag.ColectieID">
+                </select>
+                <span asp-validation-for="Institutie.ColectieID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Institutie.ExponatID" class="control-label">DenumireExponat</label>
+                <select asp-for="Institutie.ExponatID" class="form-control" asp-items="ViewBag.ExponatID">
+                </select>
+                <span asp-validation-for="Institutie.ExponatID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Institutie.ExponatID" class="control-label">Locatie</label>
+                <select asp-for="Institutie.ExponatID" class="form-control" asp-items="ViewBag.ExponatID">
+                </select>
+                <span asp-validation-for="Institutie.ExponatID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
